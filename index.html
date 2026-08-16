@@ -2,44 +2,44 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Date Checker — Katie's copy</title>
 <style>
-:root{--bone:#f6f2ea;--ink:#1c1a17;--mute:#6f6862;--line:#ddd5c8;--rasp:#9d1f47;--good:#2f6b46;--card:#fffdf8}
+:root{--bone:#fffdfb;--ink:#1c1a19;--mute:#8a736d;--line:#eadfd9;--rasp:#de4e76;--rose:#c9807a;--blush:#f7e3e8;--blush2:#f2d3dc;--gold:#c9a97c;--warm:#f0e7e1;--sec:#5d534e;--card:#ffffff}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bone);color:var(--ink);
- font-family:"Iowan Old Style","Palatino Linotype",Palatino,Charter,Georgia,serif;
- font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+ font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:760px;margin:0 auto;padding:28px 22px 80px}
-.prov{background:#fff5d6;border:1px solid #e2cf8f;border-radius:8px;padding:10px 14px;font-size:14px;
- line-height:1.45;color:#5a4a1c;margin-bottom:26px}
-.prov b{letter-spacing:.06em;font-size:12px;text-transform:uppercase}
-h1{font-size:33px;line-height:1.12;margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
-.sub{color:var(--mute);font-style:italic;margin:0 0 26px}
+.prov{background:var(--blush);border:0;border-left:4px solid var(--rasp);border-radius:6px;padding:12px 16px;
+ font-size:14px;line-height:1.5;color:var(--sec);margin-bottom:30px}
+.prov b{letter-spacing:.08em;font-size:11px;text-transform:uppercase;color:var(--rasp);font-weight:800}
+h1{font-size:46px;line-height:1.02;margin:0 0 8px;font-weight:800;letter-spacing:-.035em}
+.sub{color:var(--mute);margin:0 0 28px;font-size:16px}
 .tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.tab{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 17px;cursor:pointer;
- font:inherit;font-size:15px;color:var(--mute)}
-.tab[aria-selected=true]{background:var(--ink);color:var(--bone);border-color:var(--ink)}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:22px}
-label{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);margin:0 0 6px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 19px;cursor:pointer;
+ font:inherit;font-size:15px;font-weight:600;color:var(--sec)}
+.tab[aria-selected=true]{background:var(--ink);color:#fffdfb;border-color:var(--ink)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:24px}
+label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700;margin:0 0 7px}
 select,input[type=date],input[type=time],input[type=text],input[type=number]{font:inherit;font-size:16px;padding:9px 11px;border:1px solid var(--line);
  border-radius:8px;background:#fff;color:var(--ink);width:100%}
 .row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
 .row>div{flex:1 1 220px}
-button.go{font:inherit;font-size:16px;background:var(--ink);color:var(--bone);border:0;border-radius:999px;
- padding:11px 26px;cursor:pointer}
+button.go{font:inherit;font-size:16px;font-weight:700;background:var(--rasp);color:#fff;border:0;border-radius:999px;
+ padding:12px 30px;cursor:pointer;letter-spacing:.01em}
 button.go:disabled{opacity:.45;cursor:default}
-.verdict{text-align:center;padding:8px 0 14px;border-bottom:1px solid var(--line);margin-bottom:16px}
-.vband{font-size:29px;font-weight:600;letter-spacing:.02em;margin:0}
-.vscore{color:var(--mute);font-style:italic;margin:4px 0 0}
-h2{font-size:15px;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);font-weight:600;
- margin:22px 0 9px}
+.verdict{text-align:center;padding:10px 0 18px;border-bottom:1px solid var(--warm);margin-bottom:18px}
+.vband{font-size:40px;font-weight:800;letter-spacing:-.03em;margin:0;color:var(--ink)}
+.vscore{color:var(--mute);margin:6px 0 0;font-size:15px}
+h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rasp);font-weight:800;
+ margin:26px 0 10px}
 ul.n{list-style:none;padding:0;margin:0}
-ul.n li{padding:5px 0 5px 26px;position:relative;border-bottom:1px dotted var(--line)}
+ul.n li{padding:7px 0 7px 28px;position:relative;border-bottom:1px solid var(--warm)}
 ul.n li:last-child{border-bottom:0}
 ul.n li .m{position:absolute;left:0;top:5px;width:20px;text-align:center;font-size:14px}
-.m.pos{color:#2f6b46}.m.neg{color:var(--rasp)}.m.star{color:#b8860b}
+.m.pos{color:var(--rose)}.m.neg{color:var(--rasp)}.m.star{color:var(--gold)}
 table{width:100%;border-collapse:collapse;font-size:15px}
 td,th{padding:5px 8px;text-align:left;border-bottom:1px solid var(--line)}
-th{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:600}
-tr.me td{background:#efe7d6;font-weight:600}
+th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:800}
+tr.me td{background:var(--blush2);font-weight:700}
 .dim{color:var(--mute);font-size:14px}
 .method{font-size:14.5px;color:var(--mute);line-height:1.6}
 .method h2{margin-top:26px}
@@ -50,12 +50,10 @@ tr.me td{background:#efe7d6;font-weight:600}
 
 <div class="prov" id="prov"><b>The minute is still an estimate</b><br>
 Chart of record: <b id="pv"></b>. Nobody typed that in — it was <i>solved</i> from the placements in
-your Co-Star chart. Nine of them, and only one twenty-hour window between 1987 and 1991 satisfies all
-nine. Cleveland is confirmed, which narrows it further: Leo can only be rising there between
-<b>12:26 and 1:11 p.m.</b> that day, and Venus only entered Cancer at 12:26. So the birth is inside a
-forty-five-minute window and 12:27 is the working estimate. Across that whole window the ascendant
-stays in late Leo and nothing else moves much — so this is usable now. Tell Lee the real minute and
-it gets rebuilt in about a second.</div>
+a Co-Star chart. The signs alone narrow a birth to a window of hours; requiring the ascendant and
+every house to land where the chart says narrows it to minutes. <b>The date and the place are solid.</b>
+The exact minute is an estimate inside a short window, and nothing in the chart moves much across it —
+so this is usable now. Tell Lee the real minute and it gets rebuilt in about a second.</div>
 
 <h1 id="h1">The Date Checker</h1>
 <p class="sub" id="subline">It already knows the chart. Everything is computed on this device; nothing is sent anywhere.</p>
@@ -445,11 +443,13 @@ const PURPOSES={
  meeting:{label:"First meeting, or a date",house:7,keys:["Venus"],wax:1,rx:{Venus:-10}},
  contract:{label:"Sign, agree, negotiate",house:7,keys:["Mercury","Venus"],wax:.5,rx:{Mercury:-16,Venus:-8}},
  interview:{label:"Interview, or be judged for a role",house:10,keys:["Sun","Mercury","Jupiter"],wax:1,rx:{Mercury:-10}},
+ hearing:{label:"Schedule a hearing",house:10,keys:["Mercury","Jupiter"],wax:.5,rx:{Mercury:-16,Jupiter:-6}},
  travel:{label:"Travel, or go somewhere",house:9,keys:["Jupiter"],wax:.5,rx:{Mercury:-6}},
  make:{label:"Begin a piece of work",house:5,keys:["Venus","Sun"],wax:1,rx:{Venus:-6}},
  repair:{label:"A hard conversation, or mending one",house:7,keys:["Venus"],wax:-.5,rx:{Venus:-12,Mercury:-8}},
  money:{label:"Money — buy, sell, commit",house:2,keys:["Venus","Jupiter"],wax:1,rx:{Venus:-10}},
  body:{label:"The body — begin a regimen",house:6,keys:["Sun"],wax:-1,rx:{Mars:-8}},
+ birth:{label:"Giving birth",house:5,keys:["Moon","Venus","Jupiter"],wax:1,rx:{Venus:-6,Mercury:-4}},
  gather:{label:"Gather people",house:11,keys:["Venus","Jupiter"],wax:1,rx:{Venus:-8}}
 };
 const BANDS=[[28,"AUSPICIOUS","the sky is working for you"],[12,"GOOD","clean — nothing classical stands in the way"],
